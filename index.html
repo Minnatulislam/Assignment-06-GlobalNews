@@ -9,21 +9,21 @@
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 </head>
 
-<body>
+<body class="bg-light">
     <!-- header section start -->
     <header>
-        <nav class="navbar bg-info ">
+        <nav class="navbar bg-light ">
             <div class="container">
                 <a class="navbar-brand fw-bold fs-3" href="#">
-                    <img src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="30" height="35"
+                    <img src="images/logo.png" alt="" width="45" height="45"
                         class="d-inline-block align-text-top">
-                    GlobalNews
+                    Global <span class="text-primary">News</span>
                 </a>
                 <div class="d-flex">
                     <a class="nav-link active mx-3 fs-5 fw-semibold" aria-current="page" href="#">News</a>
-                    <a class="nav-link mx-3 fs-5 fw-semibold" href="#">Blog</a>
-                    <img src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="30" height="35"
-                        class="d-inline-block align-text-top">
+                    <a class="nav-link mx-5 fs-5 fw-semibold" href="./blog.html">Blog</a>
+                    <img src="images/DP.jpg" alt="" width="45" height="45"
+                        class="d-inline-block align-text-top rounded-circle">
                 </div>
             </div>
         </nav>
@@ -33,13 +33,15 @@
         <section class="container">
             <hr />
             <div id="categories" class="d-flex align-items-center justify-content-around">
-
             </div>
-            <div id="countCategories">
+
+            <div id="countCategories" class="bg-white fs-5 m-5 p-1 text-center rounded pl-3 shadow">
 
             </div>
         </section>
-        <section class="container" id="cardContaniner">
+
+
+        <section class="container mx-auto col-8" id="cardContaniner">
             <div id="showCards"></div>
         </section>
         <!-- Modal -->

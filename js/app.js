@@ -43,10 +43,10 @@ const displayNews = alldata => {
     const p = document.createElement("p");
     const dataLength = alldata.data.length;
     if (dataLength) {
-      p.innerHTML = dataLength + `   News Found`;
+      p.innerHTML = dataLength +' '+ `items found for this category`;
       countCategories.appendChild(p);
     } else {
-      p.innerHTML = `No Data Found`;
+      p.innerHTML = `Opps! No Data Found`;
       countCategories.appendChild(p);
     }
     showCards.innerHTML = "";
@@ -56,26 +56,26 @@ const displayNews = alldata => {
           <div class="card mb-3" style="max-width: 540px" >
               
           </div>
-          <div  class="row g-0">
+          <div  class="row bg-white shadow rounded g-0">
             <div class="col-md-4">
               <img src=${data.thumbnail_url} class="img-fluid rounded-start" alt="..." />
             </div>
-            <div class="col-md-8">
+            <div class="col-md-8 p-5">
               <div class="card-body">
                 <h5 class="card-title">${data.title}</h5>
-                <p class="card-text text-truncate">
+                <p class="card-text text-truncate mb-5 w-75">
                   ${data.details}
                 </p>
-                <div class="d-flex align-items-center justify-content-around">
-                   <div>
-                        <img src=${data.author.img} class="img-fluid rounded-start w-25"  alt="..." />
-                        <p class="card-text">
-                              ${data.author.name}
-                        </p>
-                        <small> ${data.author.published_date}</small>
-                   </div>
+                <div class="d-flex align-items-center justify-content-around my-5">
+                  <div class="d-flex ">
+                    <img src=${data.author.img} class="img-fluid rounded-circle mx-2 " style="width: 70px; height:70px;" alt="..." />
+                    <div>
+                    <p class="card-text">${data.author.name}</p>
+                    <small> ${data.author.published_date}</small>
+                </div>  
+            </div>
                    <a onclick= "modalCategoryInfo('${data.category_id}', '${data._id}')"  class="btn btn-primary type="button"
-                   class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal""> details
+                   class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"">Show details
                    </a>
                   
                 </div>
@@ -128,7 +128,7 @@ const showAllNews = async () => {
       console.log(dataLength);
       if (dataLength.length) {
         const p = document.createElement("p");
-        p.innerHTML = dataLength.length + `   data found`;
+        p.innerHTML = dataLength.length + ' '+ ` items found for this category`;
         countCategories.appendChild(p);
       } else {
         p.innerHTML = `data not found`;
@@ -138,31 +138,31 @@ const showAllNews = async () => {
         const div = document.createElement("div");
   
         div.innerHTML = `
-          <div class="card mb-3" style="max-width: 540px" >
+          <div class="card my-4" style="max-width: 540px" >
               
           </div>
-          <div  class="row g-0">
+          <div  class="row bg-white shadow rounded g-0">
           <div class="col-md-4">
               <img src=${data.thumbnail_url} class="img-fluid rounded-start" alt="..." />
           </div>
-          <div class="col-md-8">
-              <div class="card-body">
+          <div class="col-md-8 pt-5 ">
+              <div class="card-body ">
               <h5 class="card-title">${data.title}</h5>
-              <p class="card-text text-truncate" >
+              <p class="card-text text-truncate w-75" >
                   ${data.details}
               </p>
-              <div class="d-flex align-items-center justify-content-around">
-              <div>
-                      <img src=${data.author.img} class="img-fluid rounded-start w-2"  alt="..." />
-                      <p class="card-text">
-                          ${data.author.name}
-                      </p>
-                      <small> ${data.author.published_date}</small>
+              <div class="d-flex align-items-center justify-content-around my-5">
+              <div class="d-flex ">
+                  <img src=${data.author.img} class="img-fluid rounded-circle mx-2 " style="width: 70px; height:70px;" alt="..." />
+                  <div>
+                  <p class="card-text">${data.author.name}</p>
+                  <small> ${data.author.published_date}</small>
+                  </div>  
               </div>
               <a onclick= "modalCategoryInfo('${data.category_id}', '${data._id}', '${data.total_view}')"  class="btn btn-primary type="button"
                   class="btn btn-primary"
                   data-bs-toggle="modal"
-                  data-bs-target="#exampleModal""> details</a>
+                  data-bs-target="#exampleModal"">Show details</a>
             </div>
           </div>
               
